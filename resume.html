@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aldo AF - Resume</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f3f4f6;
+        --text: #111827;
+        --card-bg: #ffffff;
+        --border: #e5e7eb;
+        --btn-bg: #2563eb;
+        --btn-hover: #1e40af;
+      }
+
+      [data-bs-theme="dark"] {
+        --bg: #111827;
+        --text: #f3f4f6;
+        --card-bg: #1f2937;
+        --border: #374151;
+        --btn-bg: #3b82f6;
+        --btn-hover: #60a5fa;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .navbar-custom {
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+      }
+
+      .content-card {
+        background-color: var(--card-bg);
+        border: none;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .btn-dark-toggle {
+        background-color: var(--btn-bg);
+        color: #fff;
+      }
+
+      .btn-dark-toggle:hover {
+        background-color: var(--btn-hover);
+        color: #fff;
+      }
+
+      .photo-box {
+        width: 120px;
+        height: 180px;
+        border: none;
+        border-radius: 4px;
+        margin-bottom: 1.5rem;
+        background-color: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+        color: var(--border);
+        flex-direction: column;
+        float: right;
+        margin-left: 1rem;
+      }
+
+      .photo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom px-4 py-3 shadow-sm">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+      >
+        <div class="fw-bold fs-4">
+          <a class="navbar-brand" href="index.html">
+            <img src="img/1.jpeg" alt="Logo" style="height: 32px" />
+          </a>
+        </div>
+        <div class="d-flex gap-2">
+          <button id="darkToggle" class="btn btn-dark-toggle">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button onclick="history.back()" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left-circle"></i> Back
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="content-card mx-auto" style="max-width: 900px">
+        <div class="clearfix">
+          <div class="photo-box float-end">
+            <img src="img/Profile.png" alt="Photo" />
+          </div>
+          <h3><i class="bi bi-person-circle"></i> Aldo Abdillah Fathony</h3>
+          <p>Subang, West Java, Indonesia</p>
+          <p>
+            Email:
+            <a href="mailto:alfathony.19@gmail.com">alfathony.19@gmail.com</a>
+          </p>
+          <p>Phone: +62-823-1922-7488</p>
+          <p>
+            Website:
+            <a href="https://alfathony19.github.io/MyFolio" target="_blank"
+              >My Portfolio</a
+            >
+          </p>
+          <p>
+            LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/aldo-abdillah-fathony-144b06303"
+              target="_blank"
+              >aldo-abdillah-fathony</a
+            >
+          </p>
+        </div>
+        <hr />
+
+        <h5><i class="bi bi-file-earmark-person"></i> Profile Summary</h5>
+        <ul>
+          <li>
+            Skilled in HTML, CSS, JavaScript, and frameworks like Node.js and
+            JSON.
+          </li>
+          <li>
+            Experienced in developing responsive and scalable web applications.
+          </li>
+          <li>
+            Strong in debugging, optimization, and teamwork in delivering
+            digital solutions.
+          </li>
+          <li>Knowledgeable in CCTV maintenance and LAN/WAN installation.</li>
+        </ul>
+
+        <h5><i class="bi bi-book"></i> Relevant Coursework</h5>
+        <p>
+          Web Development, Cloud Computing, Data Management, LAN & WAN, API
+          Development, CCTV Configuration
+        </p>
+
+        <h5><i class="bi bi-briefcase"></i> Work Experience</h5>
+        <ul>
+          <li>
+            <strong>Administration Staff</strong><br />
+            CV. Cakrawala Mitra Sejahtera (Feb 2024 – May 2025)<br />
+            Managed procurement documentation and coordinated with vendors.
+          </li>
+          <li>
+            <strong>Data Entry</strong><br />
+            PT. Putra Kujang Semesta (Oct 2023 – Feb 2024)<br />
+            Handled project documentation, budget reports, and used Excel for
+            data entry.
+          </li>
+          <li>
+            <strong>Operator QA/QC</strong><br />
+            PT. Ingress Malindo Ventures (Jan 2022 – Mar 2023)<br />
+            Conducted dimensional checks and material quality inspections.
+          </li>
+        </ul>
+
+        <h5><i class="bi bi-tools"></i> Technical Skills</h5>
+        <ul>
+          <li>Languages: HTML, CSS, JavaScript, PHP</li>
+          <li>Frameworks: React, Node.js, Laravel, Bootstrap</li>
+          <li>Databases: MySQL</li>
+          <li>Tools: GitHub, JSON, API integration</li>
+        </ul>
+
+        <h5><i class="bi bi-folder-fill"></i> Projects</h5>
+        <ul>
+          <li>
+            <strong>Responsive Residence Website:</strong> HTML, CSS, JS, AOS,
+            GSAP, JSON
+          </li>
+          <li>
+            <strong>Movie App:</strong> TMDb API integration, YouTube trailers,
+            PHP service
+          </li>
+        </ul>
+
+        <h5><i class="bi bi-mortarboard"></i> Education</h5>
+        <ul>
+          <li>
+            <strong>Diploma in Construction Management</strong> – Oxford Home
+            Study Center, Oct 2024 (GPA: 2.85/4.00)
+          </li>
+          <li>
+            <strong>Vocational High School</strong> – SMKN 1 Subang (2016–2019,
+            GPA: 78/100)
+          </li>
+        </ul>
+
+        <h5><i class="bi bi-patch-check"></i> Certifications & Training</h5>
+        <p>
+          Web Development, Cyber Security, Data Analytics, IT for Business (HP
+          Life), JavaScript & CSS Advanced (MySkill), HTML & JS Fundamentals
+          (Solo Learn), AK3U BNSP Certified
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const htmlEl = document.documentElement;
+      const toggleBtn = document.getElementById("darkToggle");
+
+      toggleBtn.addEventListener("click", () => {
+        const isDark = htmlEl.getAttribute("data-bs-theme") === "dark";
+        htmlEl.setAttribute("data-bs-theme", isDark ? "light" : "dark");
+        toggleBtn.innerHTML = isDark
+          ? '<i class="bi bi-moon-stars-fill"></i>'
+          : '<i class="bi bi-sun-fill"></i>';
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Viewer</title>
+
+    <!-- Bootstrap & Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-light: #f3f4f6;
+        --text-light: #111827;
+        --bg-dark: #111827;
+        --text-dark: #f3f4f6;
+        --btn-color: #4f46e5;
+      }
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-dark);
+        transition: all 0.3s ease;
+        padding: 1rem;
+      }
+      body.light {
+        background-color: var(--bg-light);
+        color: var(--text-light);
+      }
+      canvas {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      }
+      .toolbar {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .theme-toggle,
+      .back-btn {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--btn-color);
+      }
+      .container {
+        max-width: 900px;
+        margin: auto;
+      }
+
+      /* WhatsApp Floating Button */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        font-size: 28px;
+        width: 56px;
+        height: 56px;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: pulse 2s infinite;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #1ebe5b;
+        text-decoration: none;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          transform: scale(1.1);
+          box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="toolbar">
+        <div class="d-flex align-items-center gap-2">
+          <a href="../works.html" class="back-btn" title="Back">
+            <i class="bi bi-arrow-left-circle-fill"></i>
+          </a>
+          <button class="btn btn-outline-light btn-sm" id="zoom-out">
+            <i class="bi bi-zoom-out"></i>
+          </button>
+          <button class="btn btn-outline-light btn-sm" id="zoom-in">
+            <i class="bi bi-zoom-in"></i>
+          </button>
+        </div>
+        <div
+          class="theme-toggle"
+          id="toggleTheme"
+          title="Toggle Dark/Light Mode"
+        >
+          <i class="bi bi-moon-fill" id="themeIcon"></i>
+        </div>
+      </div>
+
+      <h4><i class="bi bi-file-earmark-pdf-fill me-2"></i>My PDF Document</h4>
+      <div id="pdf-container"></div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/6282319227488"
+      class="whatsapp-float"
+      target="_blank"
+      title="Chat via WhatsApp"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script>
+      const url = "pdf/Logo-Design.pdf"; // sesuaikan path jika pindah
+      const container = document.getElementById("pdf-container");
+      let pdfDoc = null;
+      let scale = 1.2;
+
+      const renderAllPages = () => {
+        container.innerHTML = "";
+        for (let pageNum = 1; pageNum <= pdfDoc.numPages; pageNum++) {
+          pdfDoc.getPage(pageNum).then((page) => {
+            const viewport = page.getViewport({ scale });
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            page.render({ canvasContext: context, viewport: viewport });
+            container.appendChild(canvas);
+          });
+        }
+      };
+
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js";
+      pdfjsLib
+        .getDocument(url)
+        .promise.then((pdfDoc_) => {
+          pdfDoc = pdfDoc_;
+          renderAllPages();
+        })
+        .catch((err) => {
+          container.innerHTML = `<p class="text-danger">Error loading PDF: ${err.message}</p>`;
+        });
+
+      document.getElementById("zoom-in").addEventListener("click", () => {
+        scale = Math.min(scale + 0.2, 3);
+        renderAllPages();
+      });
+
+      document.getElementById("zoom-out").addEventListener("click", () => {
+        scale = Math.max(scale - 0.2, 0.6);
+        renderAllPages();
+      });
+
+      // Dark mode toggle
+      const body = document.body;
+      const toggleBtn = document.getElementById("toggleTheme");
+      const themeIcon = document.getElementById("themeIcon");
+
+      function setTheme(mode) {
+        if (mode === "light") {
+          body.classList.add("light");
+          themeIcon.classList.replace("bi-moon-fill", "bi-sun-fill");
+        } else {
+          body.classList.remove("light");
+          themeIcon.classList.replace("bi-sun-fill", "bi-moon-fill");
+        }
+        localStorage.setItem("theme", mode);
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        const current = body.classList.contains("light") ? "dark" : "light";
+        setTheme(current);
+      });
+
+      const savedTheme = localStorage.getItem("theme") || "dark";
+      setTheme(savedTheme);
+
+      // Ucapan selamat datang saat pengunjung membuka halaman
+      window.addEventListener("DOMContentLoaded", () => {
+        const welcome = document.createElement("div");
+        welcome.innerText =
+          "👋 Welcome! Feel free to explore and contact me via WhatsApp if you need anything.";
+        welcome.style.position = "fixed";
+        welcome.style.top = "20px";
+        welcome.style.right = "20px";
+        welcome.style.backgroundColor = "#4f46e5";
+        welcome.style.color = "#fff";
+        welcome.style.padding = "12px 18px";
+        welcome.style.borderRadius = "8px";
+        welcome.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+        welcome.style.zIndex = "1000";
+        welcome.style.fontSize = "14px";
+        welcome.style.opacity = "0";
+        welcome.style.transition = "opacity 0.5s";
+
+        document.body.appendChild(welcome);
+
+        // Fade in
+        requestAnimationFrame(() => {
+          welcome.style.opacity = "1";
+        });
+
+        // Auto remove after 6 detik
+        setTimeout(() => {
+          welcome.style.opacity = "0";
+          setTimeout(() => {
+            document.body.removeChild(welcome);
+          }, 500);
+        }, 6000);
+      });
+
+      // Pesan ajakan klik WhatsApp setiap 30 detik
+      setInterval(() => {
+        const hint = document.createElement("div");
+        hint.innerText = "Need help? Click the WhatsApp button!";
+        hint.style.position = "fixed";
+        hint.style.bottom = "90px";
+        hint.style.right = "20px";
+        hint.style.backgroundColor = "#25d366";
+        hint.style.color = "#fff";
+        hint.style.padding = "10px 15px";
+        hint.style.borderRadius = "8px";
+        hint.style.boxShadow = "0 4px 12px rgba(0,0,0,0.3)";
+        hint.style.zIndex = "1000";
+        hint.style.fontSize = "14px";
+        hint.style.opacity = "0";
+        hint.style.transition = "opacity 0.5s";
+
+        document.body.appendChild(hint);
+
+        // Fade in
+        requestAnimationFrame(() => {
+          hint.style.opacity = "1";
+        });
+
+        // Auto remove after 5 detik
+        setTimeout(() => {
+          hint.style.opacity = "0";
+          setTimeout(() => {
+            document.body.removeChild(hint);
+          }, 500);
+        }, 5000);
+      }, 30000);
+    </script>
+  </body>
+</html>

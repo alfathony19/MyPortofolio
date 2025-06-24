@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Aldo AF</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        position: relative;
+        z-index: 1;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .back-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+      }
+      .dark-toggle {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .section-title {
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      [data-bs-theme="dark"] body {
+        background-color: #121212 !important;
+        color: #f8f9fa !important;
+      }
+      [data-bs-theme="dark"] .list-group-item {
+        background-color: transparent !important;
+        color: #f8f9fa !important;
+      }
+      .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        background-color: #25d366;
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        margin-top: 0.5rem;
+      }
+      .whatsapp-btn:hover {
+        background-color: #1ebe5d;
+        color: white;
+      }
+      .whatsapp-btn i {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body class="bg-light text-dark">
+    <div class="container py-5 px-3 px-md-5">
+      <button
+        class="btn btn-outline-secondary back-btn"
+        onclick="history.back()"
+      >
+        <i class="bi bi-arrow-left"></i> Back
+      </button>
+      <button class="btn btn-dark dark-toggle" onclick="toggleTheme()">
+        <i class="bi bi-moon-fill" id="theme-icon"></i>
+      </button>
+
+      <section class="mb-5">
+        <h1 class="section-title">👋 Hi, I'm Aldo</h1>
+        <p>
+          I'm a freelancer who loves making other people's work easier. With an
+          educational background in <strong>Construction Management</strong> and
+          <strong>Computer Network Engineering</strong>, I'm used to working
+          efficiently with documents, systems, and data. But more than that, I
+          truly enjoy the moment when a client says:
+          <em>"Wow, this is way more organized and faster!"</em>
+        </p>
+        <p>
+          I work <strong>remotely</strong> and <strong>flexibly</strong>,
+          helping businesses from anywhere. My main focus is to assist small to
+          medium-sized companies in organizing their workflows through document
+          formatting, data management, and custom template creation.
+        </p>
+        <p>
+          I believe that
+          <strong
+            >clean documentation and workflow efficiency are the foundation of a
+            successful business</strong
+          >. And I’m here to help you make that happen.
+        </p>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="section-title">💡 My Work Principles</h2>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent">
+            <strong>Clean and systematic:</strong> All files I create are easy
+            to read, reuse, and adapt.
+          </li>
+          <li class="list-group-item bg-transparent">
+            <strong>Communicative:</strong> Open to discussion, revisions, and
+            clarifying goals with clients.
+          </li>
+          <li class="list-group-item bg-transparent">
+            <strong>Fast yet accurate:</strong> I know speed is important, but
+            quality comes first.
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="section-title">🚀 Why Work With Me?</h2>
+        <p>
+          I don't just "do and deliver"—I think ahead to help clients create
+          systems that last.
+        </p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent">
+            Completed custom Excel templates like
+            <strong>automated attendance sheets</strong>,
+            <strong>employee dashboards</strong>, and
+            <strong>contract forms</strong>.
+          </li>
+          <li class="list-group-item bg-transparent">
+            Built reusable tools with Excel formulas and Google Sheets
+            automation.
+          </li>
+          <li class="list-group-item bg-transparent">
+            Many clients return because they love the flexible, fast, yet
+            professional experience.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="section-title">☕ Let’s Talk</h2>
+        <p>
+          I'm always open to new projects—even if you're unsure of what help you
+          need yet. Sometimes the best solutions come from just talking it out.
+        </p>
+        <p>📧 <strong>Email:</strong> alfathony.19@gmail.com</p>
+        <a
+          href="https://wa.me/6282319227488"
+          target="_blank"
+          class="whatsapp-btn"
+        >
+          <i class="bi bi-whatsapp"></i> Message me on WhatsApp
+        </a>
+      </section>
+    </div>
+
+    <script>
+      function toggleTheme() {
+        const html = document.documentElement;
+        const icon = document.getElementById("theme-icon");
+        const currentTheme = html.getAttribute("data-bs-theme") || "light";
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        html.setAttribute("data-bs-theme", newTheme);
+
+        // Ganti ikon sesuai mode
+        if (newTheme === "dark") {
+          icon.classList.remove("bi-moon-fill");
+          icon.classList.add("bi-sun-fill");
+        } else {
+          icon.classList.remove("bi-sun-fill");
+          icon.classList.add("bi-moon-fill");
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

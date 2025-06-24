@@ -1,0 +1,254 @@
+:root {
+  --bg: #f3f4f6;
+  --text: #111827;
+  --input-bg: #f9fafb;
+  --border: #d1d5db;
+  --btn-bg: #2563eb;
+  --btn-hover: #1e40af;
+}
+body {
+  --bg: #111827;
+  --text: #f3f4f6;
+  --input-bg: #1f2937;
+  --border: #374151;
+  --btn-bg: #4f46e5;
+  --btn-hover: #6366f1;
+}
+
+body,
+body.light {
+  font-family: "Inter", sans-serif;
+  background: center center no-repeat fixed;
+  background-image: url("bg-gif/bg-duck.gif");
+  background-size: 150px auto; /* Ukuran GIF kecil */
+}
+
+/* Navbar terang (mode default) */
+.navbar {
+  background-color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  backdrop-filter: none !important;
+}
+
+/* Efek hover universal agar terlihat di semua mode (light & dark) */
+.navbar a:hover,
+.dropdown-menu a:hover,
+.social-left a:hover,
+.email-middle:hover {
+  color: var(--btn-hover) !important;
+  transition: 0.3s ease;
+}
+
+/* Navbar gelap */
+.dark-mode .navbar {
+  background-color: var(--bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.dark-mode a {
+  color: var(--text) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--text);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .dropdown-menu {
+  background-color: var(--input-bg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .dropdown-menu {
+  background-color: var(--input-bg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Ikon dark mode jadi putih */
+.dark-mode #themeIcon {
+  color: var(--text) !important;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.subtitle {
+  font-weight: 600;
+  color: gray;
+}
+
+.cta-btn {
+  background: linear-gradient(to right, #ff6a6a, #ff7e5f);
+  color: var(--text);
+  padding: 10px 25px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+  margin-bottom: 30px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+.cta-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.profile-img {
+  width: 220px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.mobile-contact-dropdown {
+  display: none;
+}
+
+.email-middle {
+  font-size: 0.9rem;
+  color: var(--input-bg);
+}
+
+.social-left {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  z-index: 999;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.social-left a {
+  display: block;
+  font-size: 1.3rem;
+  color: var(--input-bg);
+  margin: 10px 0;
+  transition: 0.3s;
+}
+
+.social-left a:hover {
+  color: var(--btn-hover);
+}
+
+/* Warna dan elemen dark mode lainnya */
+.dark-mode a,
+.dark-mode p,
+.dark-mode .navbar-toggler,
+.dark-mode .navbar-toggler-icon {
+  color: var(--text) !important;
+}
+
+.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.dark-mode p {
+  color: var(--text) !important;
+}
+
+/* Responsive (Mobile 480px - 768px) */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .mobile-contact-dropdown {
+    display: block;
+  }
+
+  .profile-img {
+    margin-top: 50px;
+  }
+
+  .desktop-nav-links,
+  .email-middle,
+  .social-left {
+    display: none !important;
+  }
+
+  .profile-img {
+    margin-bottom: 20px;
+  }
+
+  .hero-title,
+  .subtitle,
+  .text-muted {
+    text-align: center;
+  }
+
+  .navbar-brand {
+    margin-right: auto;
+  }
+
+  /* Navbar diam di atas saat mobile scroll */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  /* Jaga jarak konten biar gak ketimpa navbar */
+  main,
+  section,
+  .hero {
+    margin-top: 70px;
+  }
+}
+
+/* Footer umum */
+.footer {
+  color: var(--input-bg);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Footer saat dark mode aktif */
+.dark-mode .footer {
+  background-color: var(--bg);
+  color: #f1f1f1 !important;
+  border-top: 1px solid var(--input-bg);
+}
+
+/* Sticky footer hanya saat desktop */
+@media screen and (min-width: 769px) {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+/* Footer scrollable saat mobile */
+@media screen and (max-width: 768px) {
+  .footer {
+    position: relative;
+  }
+}

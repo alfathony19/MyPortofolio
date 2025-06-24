@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #000; /* backup kalau masih putih */
+}
+
+body {
+  font-family: "Georgia", serif;
+  background-color: #fdf6f0;
+  color: #3e2723;
+  overflow-x: hidden;
+}
+
+#welcome-msg {
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  #welcome-msg {
+    font-size: 14px;
+  }
+}
+
+h2 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+}
+
+.landing {
+  height: 100vh;
+  background: url("img/beautiful-happy-couple-wedding-studio%20(5).jpg")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  z-index: 10;
+}
+
+.carousel-inner img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3)
+  );
+  z-index: 1;
+}
+
+.carousel-caption-fixed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-caption-fixed h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.carousel-caption-fixed h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.carousel-caption-fixed p,
+.carousel-caption-fixed #countdown {
+  font-size: 1.1rem;
+  color: #ffddee;
+}
+
+.carousel-item img,
+.poster-image,
+.gallery-auto {
+  border-radius: 12px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.hidden-section {
+  display: none;
+}
+
+.section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.gallery-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background-color: #fffaf5;
+}
+
+.gallery-text {
+  min-width: 200px;
+}
+
+.gallery-strip-wrapper {
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-strip {
+  display: flex;
+  animation: scrollGallery 18s linear infinite;
+}
+
+.gallery-item {
+  height: 100%;
+  width: auto;
+  max-height: 480px;
+  margin-right: 20px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-33.33%);
+  }
+  50% {
+    transform: translateX(-66.66%);
+  }
+  75% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.parallax-section {
+  background-image: url("img/beautiful-happy-couple-wedding-studio\ \(2\).jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  position: relative;
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.audio-widget {
+  background: #1db954;
+  color: white;
+  border-radius: 12px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto 0;
+}
+
+.audio-widget i {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.audio-widget span {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.final-section {
+  position: relative;
+  background-image: url("img/beautiful-happy-couple-wedding-studio\ \(5\).jpg"); /* Ganti dengan gambar final yang kamu mau */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.final-section .content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.wa-floating,
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  z-index: 999;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.wa-floating {
+  right: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+.back-to-top {
+  left: 20px;
+  background-color: #6c757d;
+  transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #495057;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

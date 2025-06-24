@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan Aldi & Rani</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/undangan.css" />
+  </head>
+  <body>
+    <!-- Landing Page -->
+    <section class="landing">
+      <div class="overlay"></div>
+      <div class="content">
+        <h1>Aldi & Rani</h1>
+        <p>20 Juli 2025 • Jakarta</p>
+        <button class="btn btn-light" onclick="openInvitation()">
+          <i class="bi bi-envelope-open"></i> Open Invitation
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main" class="hidden-section">
+      <div
+        id="welcome-msg"
+        class="position-fixed top-0 start-50 translate-middle-x bg-success text-white px-4 py-2 rounded shadow"
+        style="z-index: 1050; margin-top: 20px; display: none"
+      >
+        🎉 Welcome to the wedding invitation Aldi & Rani!
+      </div>
+
+      <!-- Carousel with fixed text -->
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade position-relative"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="css/img/beautiful-happy-couple-wedding-studio.jpg"
+              class="d-block w-100"
+              alt="Slide 1"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="css/img/beautiful-happy-couple-wedding-studio (1).jpg"
+              class="d-block w-100"
+              alt="Slide 2"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="css/img/beautiful-happy-couple-wedding-studio (2).jpg"
+              class="d-block w-100"
+              alt="Slide 3"
+            />
+          </div>
+        </div>
+        <!-- Optional Controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
+        <!-- Fixed Caption -->
+        <div class="carousel-caption-fixed">
+          <h2>The Wedding of</h2>
+          <h1>Aldi & Rani</h1>
+          <p>July 20th, 2025</p>
+          <div id="countdown">Loading...</div>
+          <p class="mt-2">Your presence is our happiness 💖</p>
+        </div>
+
+        <!-- Overlay -->
+        <div class="carousel-overlay"></div>
+      </div>
+
+      <section class="section text-center">
+        <h2>Welcome</h2>
+        <p>
+          With great joy in our hearts, we invite you to celebrate our union.
+          Your presence will make our day truly special.
+        </p>
+        <!-- PARALLAX SECTION -->
+        <div
+          class="parallax-section d-flex justify-content-center align-items-center text-white"
+        >
+          <div class="text-center" style="z-index: 2; padding: 60px 20px">
+            <h2 style="font-family: 'Dancing Script', cursive; font-size: 3rem">
+              A Love Journey
+            </h2>
+            <p class="lead">A story written in stars, witnessed by hearts 💖</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="row align-items-center">
+          <div class="col-md-7 text-center mb-4 mb-md-0">
+            <img
+              src="css/img/beautiful-happy-couple-wedding-studio (3).jpg"
+              alt="Our Story Photo"
+              class="img-fluid rounded shadow"
+              style="max-height: 500px; object-fit: cover"
+            />
+          </div>
+          <div class="col-md-5">
+            <h2
+              class="mb-3 text-center"
+              style="font-family: 'Dancing Script', cursive; font-size: 2.8rem"
+            >
+              Our Story
+            </h2>
+            <p>
+              Aldi and Rani’s paths crossed in a moment of fate, blossomed
+              through friendship, and now we stand together ready for forever.
+              We've shared laughter, dreams, and countless memories — and we
+              can’t wait to begin this new journey with you witnessing it.
+            </p>
+            <p>
+              As we step into this new chapter, we carry with us the support of
+              family, friends, and every beautiful moment that brought us here.
+              Thank you for being a part of our love story — your presence means
+              the world to us.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section text-center">
+        <img
+          src="css/img/beautiful-happy-couple-wedding-studio (4).jpg"
+          class="poster-image mb-4"
+          alt="Poster Image"
+        />
+        <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.8rem">
+          Aldi & Rani
+        </h2>
+        <p class="mb-1">Saturday, July 20th, 2025</p>
+        <p class="mb-1">Time: 10:00 AM – 01:00 PM</p>
+        <p class="mb-3">Place: Gedung Cempaka, Jakarta</p>
+        <a
+          href="https://goo.gl/maps/xyzxyz"
+          target="_blank"
+          class="btn btn-outline-success btn-icon"
+        >
+          <i class="bi bi-geo-alt-fill"></i> View Location
+        </a>
+      </section>
+
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="row mb-4">
+            <!-- Judul kiri -->
+            <div class="col-md-3 text-md-start text-center">
+              <h2
+                style="
+                  margin-top: 4rem;
+                  font-family: 'Playfair Display', serif;
+                  font-size: 4rem;
+                "
+              >
+                Gallery
+              </h2>
+              <p
+                style="
+                  font-family: 'Dancing Script', cursive;
+                  font-size: 3rem;
+                  margin-top: -15px;
+                "
+              >
+                Photos
+              </p>
+            </div>
+
+            <!-- Carousel 4 portrait horizontal -->
+            <div class="col-md-9">
+              <div
+                id="tiraiCarousel"
+                class="carousel slide"
+                data-bs-ride="carousel"
+                data-bs-interval="3000"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="d-flex gap-3 overflow-hidden">
+                      <img
+                        src="css/img/beautiful-happy-couple-wedding-studio.jpg"
+                        class="rounded"
+                        style="height: 300px; width: 23%; object-fit: cover"
+                      />
+                      <img
+                        src="css/img/beautiful-happy-couple-wedding-studio (1).jpg"
+                        class="rounded"
+                        style="height: 300px; width: 23%; object-fit: cover"
+                      />
+                      <img
+                        src="css/img/beautiful-happy-couple-wedding-studio (2).jpg"
+                        class="rounded"
+                        style="height: 300px; width: 23%; object-fit: cover"
+                      />
+                      <img
+                        src="css/img/beautiful-happy-couple-wedding-studio (4).jpg"
+                        class="rounded"
+                        style="height: 300px; width: 23%; object-fit: cover"
+                      />
+                    </div>
+                  </div>
+                  <!-- Duplikat untuk looping -->
+                  <div class="carousel-item">
+                    <div class="d-flex gap-3 overflow-hidden">
+                      <img
+                        src="css/img/beautiful-happy-couple-wedding-studio (4).jpg"
+                        class="rounded"
+                        style="height: 300px; width: 23%; object-fit: cover"
+                      />
+                      <img
+                        src="css/img/beautiful-happy-couple-wedding-studio (2).jpg"
+                        class="rounded"
+                        style="height: 300px; width: 23%; object-fit: cover"
+                      />
+                      <img
+                        src="css/img/beautiful-happy-couple-wedding-studio (1).jpg"
+                        class="rounded"
+                        style="height: 300px; width: 23%; object-fit: cover"
+                      />
+                      <img
+                        src="css/img/beautiful-happy-couple-wedding-studio.jpg"
+                        class="rounded"
+                        style="height: 300px; width: 23%; object-fit: cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1 landscape + 1 portrait di bawah -->
+          <div class="row gx-3 mt-4">
+            <div class="d-flex justify-content-end">
+              <div class="col-8 col-sm-6">
+                <img
+                  src="css/img/beautiful-happy-couple-wedding-studio (5).jpg"
+                  alt="Landscape"
+                  class="img-fluid rounded"
+                  style="object-fit: cover; height: 200px; width: 90%"
+                />
+              </div>
+              <div class="col-md-4">
+                <img
+                  src="css/img/beautiful-happy-couple-wedding-studio (3).jpg"
+                  alt="Portrait"
+                  class="img-fluid rounded"
+                  style="object-fit: cover; height: 500px; width: 100%"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="d-grid justify-content-center align-items-center text-white"
+        style="
+          background-color: rgba(0, 0, 0, 0.4);
+          padding: 40px;
+          border-radius: 12px;
+          max-width: 1800px;
+          margin: auto;
+          align-content: center;
+        "
+      >
+        <h2 style="font-family: 'Dancing Script', cursive; font-size: 2.5rem">
+          Confirmation of Attendance
+        </h2>
+        <p id="guest-name" class="mb-4" style="font-size: 1.2rem"></p>
+
+        <form class="rsvp-form mx-auto" style="max-width: 500px">
+          <div class="mb-3 text-start">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Full Name .."
+              required
+            />
+          </div>
+          <div class="mb-3 text-start">
+            <label for="status" class="form-label">Attendance</label>
+            <select id="status" class="form-control">
+              <option value="ya">I will be there</option>
+              <option value="tidak">Sorry i can't attend</option>
+            </select>
+          </div>
+          <div class="mb-3 text-start">
+            <label for="ucapan" class="form-label">Greetings / Prayers</label>
+            <textarea
+              class="form-control"
+              id="ucapan"
+              rows="3"
+              placeholder="Greetings or Prayers ..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Send</button>
+        </form>
+
+        <div class="row mt-5 justify-content-center">
+          <div class="col-auto">
+            <a
+              href="https://wa.me/6281234567890?text=Halo%2C%20saya%20akan%20hadir%20di%20acara%20Aldi%20%26%20Rani"
+              class="btn btn-outline-light btn-icon"
+              target="_blank"
+            >
+              <i class="bi bi-whatsapp"></i> RSVP via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <section class="final-section">
+        <div class="overlay"></div>
+        <div class="content text-center">
+          <img src="css/img/Logo.png" width="50%" />
+          <h2>Thank You!</h2>
+          <p>With love and gratitude,<br />Aldi & Rani</p>
+          <div class="audio-controls text-center mt-3">
+            <button
+              class="btn btn-outline-light me-2"
+              onclick="document.getElementById('wedding-audio').play()"
+            >
+              <i class="bi bi-play-fill"></i> Play
+            </button>
+            <button
+              class="btn btn-outline-light"
+              onclick="document.getElementById('wedding-audio').pause()"
+            >
+              <i class="bi bi-pause-fill"></i> Pause
+            </button>
+          </div>
+          <blockquote class="text-white fst-italic mt-4">
+            “Love is not just about finding the right person. It’s about being
+            the right couple.”
+          </blockquote>
+
+          <!-- Tombol WhatsApp Floating -->
+          <a
+            href="https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20template%20di%20undanganya!!!"
+            class="wa-floating"
+            target="_blank"
+          >
+            <i class="bi bi-whatsapp"></i>
+          </a>
+
+          <!-- Tombol Kembali ke Atas -->
+          <a href="#top" class="back-to-top">
+            <i class="bi bi-arrow-up"></i>
+          </a>
+
+          <small>&copy; 2025 Aldi & Rani Wedding</small>
+        </div>
+      </section>
+    </main>
+
+    <audio id="wedding-audio" loop>
+      <source
+        src="music/James Arthur - A Thousand Years (Christina Perri Cover).mp3"
+        type="audio/mpeg"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      AOS.init({ duration: 1000, once: true });
+      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+
+      const target = new Date("2025-07-20T10:00:00").getTime();
+      const countdownEl = document.getElementById("countdown");
+
+      const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = target - now;
+
+        if (distance <= 0) {
+          countdownEl.innerText = "💭 The wedding is happening today!";
+          return;
+        }
+
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.innerText = `${d}d ${h}h ${m}m ${s}s left 💍`;
+      };
+
+      function openInvitation() {
+        document.getElementById("main").style.display = "block";
+        document.querySelector(".landing").style.display = "none";
+        document.getElementById("wedding-audio").play();
+
+        const msg = document.getElementById("welcome-msg");
+        msg.style.display = "block";
+        msg.style.opacity = "1";
+
+        setTimeout(() => {
+          msg.style.opacity = "0";
+          setTimeout(() => {
+            msg.style.display = "none";
+          }, 500);
+        }, 4000);
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const namaTamu = urlParams.get("nama");
+      if (namaTamu) {
+        document.getElementById(
+          "guest-name"
+        ).innerText = `Untuk Yth. ${decodeURIComponent(namaTamu)}`;
+        document.getElementById("name").value = decodeURIComponent(namaTamu);
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  </body>
+</html>
