@@ -154,6 +154,10 @@ h2 {
   margin-right: 20px;
   border-radius: 12px;
   object-fit: cover;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
 
 @keyframes scrollGallery {
@@ -168,6 +172,10 @@ h2 {
   }
   75% {
     transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
   }
   100% {
     transform: translateX(0%);
@@ -194,104 +202,131 @@ h2 {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
-
-.audio-widget {
-  background: #1db954;
-  color: white;
+.rsvp-sections {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 12px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 400px;
-  margin: 20px auto 0;
+  padding: 30px;
+  color: #333;
 }
 
-.audio-widget i {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.audio-widget span {
-  margin-left: 10px;
-  font-weight: bold;
-}
-
-.final-section {
+.thankyou-section {
+  display: none;
   position: relative;
-  background-image: url("img/beautiful-happy-couple-wedding-studio\ \(5\).jpg"); /* Ganti dengan gambar final yang kamu mau */
+  background-image: url("img/beautiful-happy-couple-wedding-studio (5).jpg");
   background-size: cover;
   background-position: center;
-  color: white;
-  padding: 100px 20px;
+  background-attachment: fixed;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease-out;
+  -webkit-transform: translateY(60px);
+  -moz-transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -o-transform: translateY(60px);
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
 }
 
-.final-section .overlay {
+.thankyou-section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+
+.thankyou-section .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-.final-section .content {
+.thankyou-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* buat ngepasin tengah */
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.wa-floating,
-.back-to-top {
+.logo-thanks {
+  width: 180px;
+  max-width: 80%;
+  margin-bottom: 0.2rem;
+}
+
+.reveal-thankyou {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s ease-out;
+}
+
+.reveal-thankyou.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top,
+.wa-floating {
   position: fixed;
   bottom: 20px;
-  width: 56px;
-  height: 56px;
-  z-index: 999;
   background-color: #25d366;
   color: white;
   border-radius: 50%;
-  font-size: 24px;
+  width: 56px;
+  height: 56px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 999;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.wa-floating {
-  right: 20px;
   animation: pulse 1.5s infinite;
 }
 
 .back-to-top {
   left: 20px;
   background-color: #6c757d;
-  transition: background-color 0.3s;
 }
 
-.back-to-top:hover {
-  background-color: #495057;
+.wa-floating {
+  right: 20px;
 }
 
 @keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
   }
-  70% {
+  50% {
     transform: scale(1.1);
-    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 480px) {
+  .rsvp-wrapper,
+  .thankyou-content {
+    padding: 15px;
+  }
+  .logo-thanks {
+    width: 100px;
   }
 }
 
@@ -306,4 +341,93 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+}
+
+@media (max-width: 480px) {
+  .landing {
+    background-position: top center;
+    background-size: cover;
+  }
+
+  .carousel-inner img {
+    height: 60vh;
+    object-position: center;
+  }
+
+  .carousel-caption-fixed h2 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-caption-fixed h1 {
+    font-size: 2.2rem;
+  }
+
+  .carousel-caption-fixed p,
+  .carousel-caption-fixed #countdown {
+    font-size: 0.9rem;
+  }
+  .gallery-section .carousel-inner .carousel-item img {
+    height: 400px !important;
+    width: 100% !important;
+  }
+
+  .gallery-section .carousel-item .d-flex {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .gallery-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .gallery-bottom img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .gallery-bottom .col-md-8,
+  .gallery-bottom .col-md-4 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-bottom: 16px;
+  }
+
+  .gallery-bottom img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .rsvp-form {
+    padding: 0 12px;
+    max-width: 100% !important;
+  }
+
+  .rsvp-form .form-label {
+    font-size: 0.95rem;
+  }
+
+  .rsvp-form input,
+  .rsvp-form select,
+  .rsvp-form textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .rsvp-form button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #guest-name {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .rsvp-form-title {
+    font-size: 2rem !important;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }

@@ -59,6 +59,7 @@
         background-color: var(--btn-hover);
       }
       .grid {
+        padding-bottom: 100px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
@@ -145,6 +146,52 @@
       }
       .whatsapp-cta a:hover {
         background-color: #1ebe5d;
+      }
+
+      body.dark .btn-primary {
+        background-color: var(--btn-bg) !important;
+        color: white !important;
+        border: none;
+      }
+
+      body.dark .btn-primary:hover {
+        background-color: var(--btn-hover) !important;
+        color: white !important;
+      }
+
+      /* Footer umum */
+      .footer {
+        color: var(--input-bg);
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      /* Footer saat dark mode aktif */
+      body.dark .footer {
+        background-color: var(--bg);
+        color: white !important;
+        border-top: 1px solid var(--input-bg);
+      }
+
+      body.dark .footer p {
+        color: #ffffff !important;
+      }
+
+      /* Sticky footer hanya saat desktop */
+      @media screen and (min-width: 769px) {
+        .footer {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+        }
+      }
+
+      /* Footer scrollable saat mobile */
+      @media screen and (max-width: 768px) {
+        .footer {
+          position: relative;
+        }
       }
     </style>
   </head>
@@ -404,6 +451,15 @@
         Chat Me
       </a>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer fixed-bottom text-center py-3">
+      <div class="container">
+        <p class="mb-0 text-muted">
+          &copy; 2025 Aldo Abdillah Fathony. All rights reserved.
+        </p>
+      </div>
+    </footer>
     <!-- Bootstrap Bundle with Popper (WAJIB untuk dropdown) -->
     <script>
       // Ucapan selamat datang saat pengunjung membuka halaman
