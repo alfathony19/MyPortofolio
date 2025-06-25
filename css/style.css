@@ -248,12 +248,12 @@ body.light {
     z-index: 1000;
   }
   .navbar .navbar-toggler {
-    margin-right: 10px; /* agar toggle darkmode bisa disisipkan di kiri tombol ini */
+    margin-right: 10px;
   }
 
   #themeToggle {
-    margin-left: auto; /* dorong ke kanan */
-    margin-right: 15px;
+    margin-left: 0; /* dorong ke kanan */
+    margin-right: 8px;
     font-size: 1.3rem;
   }
 
