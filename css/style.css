@@ -230,6 +230,8 @@ body.light {
 
   .navbar-collapse {
     position: fixed;
+    text-align: center;
+    align-items: center;
     top: 70px;
     right: 0;
     width: 220px;
