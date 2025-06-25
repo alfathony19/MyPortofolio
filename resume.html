@@ -21,7 +21,6 @@
         --btn-bg: #2563eb;
         --btn-hover: #1e40af;
       }
-
       [data-bs-theme="dark"] {
         --bg: #111827;
         --text: #f3f4f6;
@@ -30,13 +29,11 @@
         --btn-bg: #3b82f6;
         --btn-hover: #60a5fa;
       }
-
       body {
         background-color: var(--bg);
         color: var(--text);
         font-family: "Segoe UI", sans-serif;
       }
-
       .navbar-custom {
         background-color: var(--card-bg);
         border-bottom: 1px solid var(--border);
@@ -44,7 +41,6 @@
         top: 0;
         z-index: 1020;
       }
-
       .content-card {
         background-color: var(--card-bg);
         border: none;
@@ -52,17 +48,14 @@
         padding: 2rem;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       }
-
       .btn-dark-toggle {
         background-color: var(--btn-bg);
         color: #fff;
       }
-
       .btn-dark-toggle:hover {
         background-color: var(--btn-hover);
         color: #fff;
       }
-
       .photo-box {
         width: 120px;
         height: 180px;
@@ -79,7 +72,6 @@
         float: right;
         margin-left: 1rem;
       }
-
       .photo-box img {
         width: 100%;
         height: 100%;
@@ -106,6 +98,13 @@
           <button onclick="history.back()" class="btn btn-outline-secondary">
             <i class="bi bi-arrow-left-circle"></i> Back
           </button>
+          <a
+            href="pdf/Cv-Aldo-Abdillah-Fathony.pdf"
+            download
+            class="btn btn-success"
+          >
+            <i class="bi bi-download"></i> Download CV
+          </a>
         </div>
       </div>
     </nav>
@@ -122,10 +121,14 @@
             Email:
             <a href="mailto:alfathony.19@gmail.com">alfathony.19@gmail.com</a>
           </p>
-          <p>Phone: +62-823-1922-7488</p>
+          <p>
+            Phone: <a href="https://wa.me/6282319227488">+62-823-1922-7488</a>
+          </p>
           <p>
             Website:
-            <a href="https://alfathony19.github.io/MyFolio" target="_blank"
+            <a
+              href="https://alfathony19.github.io/MyPortofolio/"
+              target="_blank"
               >My Portfolio</a
             >
           </p>
@@ -158,27 +161,23 @@
 
         <h5><i class="bi bi-book"></i> Relevant Coursework</h5>
         <p>
-          Web Development, Cloud Computing, Data Management, LAN & WAN, API
-          Development, CCTV Configuration
+          Web Development, Data Analytics, Cloud Computing, Data Management, LAN
+          & WAN, API Development, CCTV Configuration
         </p>
 
         <h5><i class="bi bi-briefcase"></i> Work Experience</h5>
         <ul>
           <li>
-            <strong>Administration Staff</strong><br />
-            CV. Cakrawala Mitra Sejahtera (Feb 2024 – May 2025)<br />
-            Managed procurement documentation and coordinated with vendors.
+            <strong>Administration Staff</strong><br />CV. Cakrawala Mitra
+            Sejahtera (Feb 2024 – May 2025)
           </li>
           <li>
-            <strong>Data Entry</strong><br />
-            PT. Putra Kujang Semesta (Oct 2023 – Feb 2024)<br />
-            Handled project documentation, budget reports, and used Excel for
-            data entry.
+            <strong>Data Entry</strong><br />PT. Putra Kujang Semesta (Oct 2023
+            – Feb 2024)
           </li>
           <li>
-            <strong>Operator QA/QC</strong><br />
-            PT. Ingress Malindo Ventures (Jan 2022 – Mar 2023)<br />
-            Conducted dimensional checks and material quality inspections.
+            <strong>Operator QA/QC</strong><br />PT. Ingress Malindo Ventures
+            (Jan 2022 – Mar 2023)
           </li>
         </ul>
 
@@ -186,7 +185,7 @@
         <ul>
           <li>Languages: HTML, CSS, JavaScript, PHP</li>
           <li>Frameworks: React, Node.js, Laravel, Bootstrap</li>
-          <li>Databases: MySQL</li>
+          <li>Databases: MySQL, Excel</li>
           <li>Tools: GitHub, JSON, API integration</li>
         </ul>
 
@@ -215,18 +214,54 @@
         </ul>
 
         <h5><i class="bi bi-patch-check"></i> Certifications & Training</h5>
-        <p>
-          Web Development, Cyber Security, Data Analytics, IT for Business (HP
-          Life), JavaScript & CSS Advanced (MySkill), HTML & JS Fundamentals
-          (Solo Learn), AK3U BNSP Certified
-        </p>
+        <ul>
+          <li>
+            <a href="pdf/Web-Development.pdf" download>Web Development</a>
+          </li>
+          <li>
+            <a href="pdf/Cyber-Security-Basic.pdf" download>Cyber Security</a>
+          </li>
+          <li>
+            <a href="pdf/Data-Analytics.pdf" download>Data Analytics</a>
+          </li>
+          <li>
+            <a href="pdf/IT-for-Business.pdf" download
+              >IT for Business (HP Life)</a
+            >
+          </li>
+          <li>
+            <a href="pdf/Javascript-Css-Advance.pdf" download
+              >JavaScript & CSS Advanced (MySkill)</a
+            >
+          </li>
+          <li>
+            <a href="pdf/Html-Javascript-Sololearn.pdf" download
+              >HTML & JS Fundamentals (Solo Learn)</a
+            >
+          </li>
+          <li>
+            <a href="pdf/Sertifikasi AK3U .pdf" download>AK3U BNSP Certified</a>
+          </li>
+          <li>
+            <a href="pdf/Excell-Functions.pdf" download>Excel Functions</a>
+          </li>
+          <li>
+            <a href="pdf/Excell-Financial-Statement.pdf" download
+              >Financial Statement</a
+            >
+          </li>
+          <li>
+            <a href="pdf/Data-Anlitycs-Excell.pdf" download
+              >Data Analytics With Excel</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
 
     <script>
       const htmlEl = document.documentElement;
       const toggleBtn = document.getElementById("darkToggle");
-
       toggleBtn.addEventListener("click", () => {
         const isDark = htmlEl.getAttribute("data-bs-theme") === "dark";
         htmlEl.setAttribute("data-bs-theme", isDark ? "light" : "dark");
