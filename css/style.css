@@ -203,7 +203,7 @@ body.light {
 }
 
 /* Responsive (Mobile 480px - 768px) */
-@media screen and (max-width: 480px) and (min-width: 768px) {
+@media screen and (max-width: 480px) and (max-width: 768px) {
   .mobile-contact-dropdown {
     display: block !important;
     padding: 15px;
