@@ -20,102 +20,99 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg px-3 py-3 shadow-sm">
-      <div
-        class="container-fluid d-flex justify-content-between align-items-center"
-      >
-        <!-- Logo -->
-        <a class="navbar-brand me-auto" href="#">
-          <img src="img/1.jpeg" alt="Logo" style="height: 32px" />
-        </a>
-
-        <!-- Email tengah desktop only -->
-        <div class="d-none d-lg-block email-middle">
-          <a href="mail/send-mail.html" class="text-decoration-none text-dark">
-            <i class="bi bi-envelope-fill me-1"></i> alfathony.19@gmail.com
+      <div class="container-fluid">
+        <!-- Kiri: Logo -->
+        <div class="d-flex align-items-center">
+          <a class="navbar-brand me-3" href="#">
+            <img src="img/1.jpeg" alt="Logo" style="height: 32px" />
           </a>
         </div>
 
-        <!-- Kanan: Toggle + Hamburger -->
-        <div class="d-flex align-items-center">
-          <!-- Dark Mode Toggle -->
-          <button id="themeToggle" class="btn btn-link text-dark me-1">
-            <i id="themeIcon" class="bi bi-moon-fill fs-5"></i>
-          </button>
-
-          <!-- Hamburger -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Collapse Nav -->
-      <div
-        class="collapse navbar-collapse justify-content-end"
-        id="navbarNavDropdown"
-      >
-        <ul class="navbar-nav text-center w-100">
-          <li class="nav-item">
-            <a class="nav-link fw-medium" href="works.html">
-              <i class="bi bi-file-text"></i> Works</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-medium" href="resume.html">
-              <i class="bi bi-file-person"></i> Resume</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-medium" href="self.html">
-              <i class="bi bi-book"></i> Self</a
-            >
-          </li>
-
-          <!-- Mobile Only: Contact/Social -->
-          <li class="nav-item dropdown mobile-contact-dropdown d-lg-none">
+        <!-- Tengah: Email + Toggle Darkmode (Desktop Only) -->
+        <div class="d-none d-lg-flex mx-auto align-items-center gap-3">
+          <div class="email-middle">
             <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
+              href="mail/send-mail.html"
+              class="text-decoration-none text-dark"
             >
-              <i class="bi bi-person-lines-fill"></i> Contact
+              <i class="bi bi-envelope-fill me-1"></i> alfathony.19@gmail.com
             </a>
-            <ul class="dropdown-menu text-center">
-              <li>
-                <a class="dropdown-item" href="mail/send-mail.html">
-                  <i class="bi bi-envelope-fill"></i> Email</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="https://www.linkedin.com/in/aldo-abdillah-fathony-144b06303/"
-                >
-                  <i class="bi bi-linkedin"></i> LinkedIn</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="https://github.com/alfathony19">
-                  <i class="bi bi-github"></i> GitHub</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="https://instagram.com/alfathony.19"
-                >
-                  <i class="bi bi-instagram"></i> Instagram</a
-                >
-              </li>
-            </ul>
-          </li>
-        </ul>
+          </div>
+        </div>
+        <button id="themeToggle" class="btn btn-link text-dark p-0">
+          <i id="themeIcon" class="bi bi-moon-fill fs-5"></i>
+        </button>
+        <!-- Kanan: Hamburger (Mobile Only) -->
+        <button
+          class="navbar-toggler ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapse: Menu Navigasi -->
+        <div
+          class="collapse navbar-collapse justify-content-lg-end mt-3 mt-lg-0"
+          id="navbarNavDropdown"
+        >
+          <ul class="navbar-nav text-center text-lg-start">
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="works.html"
+                ><i class="bi bi-file-text"></i> Works</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="resume.html"
+                ><i class="bi bi-file-person"></i> Resume</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-medium" href="self.html"
+                ><i class="bi bi-book"></i> Self</a
+              >
+            </li>
+
+            <!-- Contact untuk Mobile -->
+            <li class="nav-item dropdown mobile-contact-dropdown d-lg-none">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                <i class="bi bi-person-lines-fill"></i> Contact
+              </a>
+              <ul class="dropdown-menu text-end">
+                <li>
+                  <a class="dropdown-item" href="mail/send-mail.html"
+                    ><i class="bi bi-envelope-fill"></i> Email</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://linkedin.com/in/aldo-abdillah-fathony-144b06303/"
+                    ><i class="bi bi-linkedin"></i> LinkedIn</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="https://github.com/alfathony19"
+                    ><i class="bi bi-github"></i> GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://instagram.com/alfathony.19"
+                    ><i class="bi bi-instagram"></i> Instagram</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
