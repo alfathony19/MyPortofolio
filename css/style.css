@@ -247,12 +247,12 @@ body.light {
   .navbar-nav {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     padding-right: 20px;
   }
 
   .navbar-nav .nav-link {
-    text-align: right;
+    text-align: center;
     width: 100%;
   }
 
@@ -260,7 +260,7 @@ body.light {
     width: 100%;
     border: none;
     box-shadow: none;
-    text-align: right;
+    text-align: center;
   }
 
   .mobile-contact-dropdown {
