@@ -27,6 +27,9 @@ body.light {
 /* Navbar terang (mode default) */
 .navbar {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   top: 0;
   left: 0;
   right: 0;
@@ -34,6 +37,16 @@ body.light {
   background-color: var(--text);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   backdrop-filter: none !important;
+}
+.navbar-toggler {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+#themeToggle {
+  margin-left: 0;
+  font-size: 1.3rem;
+  color: white;
 }
 
 /* Efek hover universal agar terlihat di semua mode (light & dark) */
@@ -104,6 +117,14 @@ body.light {
   font-weight: 600;
   transition: 0.3s ease;
   margin-bottom: 30px;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
 }
 
 .cta-btn:hover {
@@ -155,6 +176,10 @@ body.light {
   color: var(--input-bg);
   margin: 10px 0;
   transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
 }
 
 .social-left a:hover {
@@ -181,6 +206,13 @@ body.light {
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .mobile-contact-dropdown {
     display: block !important;
+    padding: 15px;
+    background-color: var(--input-bg);
+    color: var(--text);
+    border-radius: 8px;
+    margin: 10px auto;
+    text-align: center;
+    width: 90%;
   }
 
   .profile-img {
